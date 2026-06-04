@@ -9,9 +9,15 @@ class UserController extends Controller
 {
     public function ShowUser()
     {
-        $users = DB::table('users')->where('id', 3)->get();
+        // $users = DB::table('users')->where('city', 'nagaur')->get();
+        $users = DB::table('users')->get();
 
         // Return Data In josn formate //
         return view('user', ['data' => $users]);
+    }
+    public function SingleUser($id)
+    {
+        $users = DB::table('users')->where('id', $id)->get();
+        return $users;
     }
 }

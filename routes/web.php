@@ -8,3 +8,4 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', [UserController::class, 'ShowUser']);
+Route::get('/user/{id}', [UserController::class, 'SingleUser'])->name('user.view');
