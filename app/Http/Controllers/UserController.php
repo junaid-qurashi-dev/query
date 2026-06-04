@@ -9,9 +9,11 @@ class UserController extends Controller
 {
     public function ShowUser()
     {
-        $user = DB::table('users')->get();
+        $users = DB::table('users')->get();
 
         // Return Data In josn formate //
-        return $user;
+        foreach ($users as $user) {
+            return $user->age . "<br>";
+        }
     }
 }
