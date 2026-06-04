@@ -17,7 +17,7 @@ class UserController extends Controller
     }
     public function SingleUser($id)
     {
-        $users = DB::table('users')->where('id', $id)->get();
-        return $users;
+        $user = DB::table('users')->where('id', $id)->get();
+        return view('single', ['data' => $user]);
     }
 }
