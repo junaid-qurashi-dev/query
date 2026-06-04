@@ -10,10 +10,10 @@ class UserController extends Controller
     public function ShowUser()
     {
         // $users = DB::table('users')->where('city', 'nagaur')->get();
-        $users = DB::table('users')->get();
-
+        $users = DB::table('users')->select('city')->distinct()->get();
+        return $users;
         // Return Data In josn formate //
-        return view('user', ['data' => $users]);
+        // return view('user', ['data' => $users]);
     }
     public function SingleUser($id)
     {
