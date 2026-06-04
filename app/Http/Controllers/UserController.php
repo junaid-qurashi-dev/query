@@ -12,8 +12,6 @@ class UserController extends Controller
         $users = DB::table('users')->get();
 
         // Return Data In josn formate //
-        foreach ($users as $user) {
-            return $user->age . "<br>";
-        }
+        return view('user', ['data' => $users]);
     }
 }
